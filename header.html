@@ -1,0 +1,125 @@
+<header>
+    <div class="header_wrap">
+        <nav>
+            <ul class="nav_menu">
+                <li class="has-submenu" id="li1">
+                    <a href="#"><span>ABOUT</span></a>
+                </li>
+                <li class="has-submenu" id="li2">
+                    <a href="#"><span>SHOP</span></a>
+                </li>
+                <div class="submenu_wrap2">
+                    <ul class="submenu">
+                        <li class="submenu_list"><a href="#">PinkRose</a></li>
+                        <li class="submenu_list"><a href="#">BlueMarine</a></li>
+                        <li class="submenu_list"><a href="#">GreenCica</a></li>
+                    </ul>
+                </div>
+                <li class="has-submenu" id="li3">
+                    <a href="#"><span>COMMUNITY</span></a>
+                </li>
+                <div class="submenu_wrap3">
+                    <ul class="submenu">
+                        <li class="submenu_list"><a href="#">Notice</a></li>
+                        <li class="submenu_list"><a href="#">Q&A</a></li>
+                        <li class="submenu_list"><a href="#">Review</a></li>
+                        <li class="submenu_list"><a href="#">Event</a></li>
+                        <li class="submenu_list"><a href="#">Promotion</a></li>
+                    </ul>
+                </div>
+            </ul>
+        </nav>
+        <h1><a href="./"><img src="./img/logo.png" alt="Logo"></a></h1>
+        <div class="icons">
+            <a href="#" class="icon">
+                <img src="./img/icon1.png" alt="Join">
+                <span class="icon-text">JOIN +5,000P</span>
+            </a>
+            <a href="#" class="icon">
+                <img src="./img/icon2.png" alt="Cart">
+                <span class="icon-number">0</span>
+            </a>
+            <a href="#" class="icon">
+                <img src="./img/icon3.png" alt="Profile">
+            </a>
+        </div>
+    </div>
+</header>
+
+<header class="header_mo">
+    <div class="header_wrap">
+        <h1>
+            <a href="./" class="center_logo"><img src="./img/logo.png" alt="Mobile Logo"></a>
+        </h1>
+        <a class="right1 i2"><img src="./img/menu.png" class="ham" alt="Menu"></a>
+        <div class="icons">
+            <a href="#" class="icon">
+                <img src="./img/icon1.png" alt="Join">
+                <span class="icon-text">JOIN +5,000P</span>
+            </a>
+            <a href="#" class="icon">
+                <img src="./img/icon2.png" alt="Cart">
+                <span class="icon-number">0</span>
+            </a>
+        </div>
+    </div>
+    <nav>
+        <div class="nav_logo">
+            <i class="close"></i>
+        </div>
+        <ul class="nav_menu">
+            <li id="li1"><a href="#">LOGIN <span>/</span> JOIN</a></li>
+            <li id="li2"><a href="#">BAG (0)</a></li>
+            <li id="li3"><a href="#">MY ACCOUNT</a></li>
+        </ul>
+        <ul class="nav_menu">
+            <li id="li1"><a href="#">ABOUT</a></li>
+            <li id="li2">
+                <a href="#">SHOP</a>
+                <ul class="submenu">
+                    <li class="submenu_list"><a href="#">PinkRose</a></li>
+                    <li class="submenu_list"><a href="#">BlueMarine</a></li>
+                    <li class="submenu_list"><a href="#">GreenCica</a></li>
+                </ul>
+            </li>
+            <li id="li3"><a href="#">COMMUNITY</a></li>
+            <li id="li3"><a href="#">SEARCH</a></li>
+        </ul>
+        <ul class="nav_menu">
+            <li id="li1"><a href="#">INSTAGRAM</a></li>
+            <li id="li2"><a href="#">KAKAO</a></li>
+            <li id="li3"><a href="#">YOUTUBE</a></li>
+        </ul>
+    </nav>
+    <div class="back"></div>
+</header>
+
+<script>
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        const headerMo = document.querySelector('.header_mo');
+
+        if (window.scrollY > 0) {
+            header.classList.add('scrolled');
+            headerMo.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+            headerMo.classList.remove('scrolled');
+        }
+    });
+</script>
+
+<script>
+    const menuOpen = document.querySelector('.i2');
+    const menuClose = document.querySelector('.close');
+    const nav = document.querySelector('.header_mo nav');
+    const back = document.querySelector('.back');
+
+    function toggleMenu(open) {
+        nav.classList.toggle('open', open);
+        back.classList.toggle('open', open);
+    }
+
+    menuOpen.addEventListener('click', () => toggleMenu(true));
+    menuClose.addEventListener('click', () => toggleMenu(false));
+</script>
