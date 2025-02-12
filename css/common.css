@@ -1,427 +1,174 @@
-/* @font-face */
-@font-face {
-    font-family: "Jost-Thin";
-    src: url("../fonts/Jost-Thin.ttf") format("truetype"),
-         url("../fonts/Jost-Thin.woff") format("woff"),
-         url("../fonts/Jost-Thin.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Jost-Medium";
-    src: url("../fonts/Jost-Medium.ttf") format("truetype"),
-         url("../fonts/Jost-Medium.woff") format("woff"),
-         url("../fonts/Jost-Medium.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Jost-Regular";
-    src: url("../fonts/Jost-Regular.ttf") format("truetype"),
-         url("../fonts/Jost-Regular.woff") format("woff"),
-         url("../fonts/Jost-Regular.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Jost-SemiBold";
-    src: url("../fonts/Jost-SemiBold.ttf") format("truetype"),
-         url("../fonts/Jost-SemiBold.woff") format("woff"),
-         url("../fonts/Jost-SemiBold.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Pretendard-Light";
-    src: url("../fonts/Pretendard-Light.otf") format("woff");
-    font-weight: normal;
-}
-@font-face {
-    font-family: "Pretendard-Regular";
-    src: url("../fonts/Pretendard-Regular.otf") format("woff");
-    font-weight: normal;
-}
-@font-face {
-    font-family: "Pretendard-SemiBold";
-    src: url("../fonts/Pretendard-SemiBold.otf") format("woff");
-    font-weight: normal;
-}
-@font-face {
-    font-family: "Newsreader-Medium";
-    src: url("../fonts/Newsreader-Medium.ttf") format("woff");
-    font-weight: normal;
-}
-@font-face {
-    font-family: "Newsreader-Regular";
-    src: url("../fonts/Newsreader-Regular.ttf") format("woff");
-    font-weight: normal;
-}
-@font-face {
-    font-family: "Newsreader-Light";
-    src: url("../fonts/Newsreader-Light.ttf") format("woff");
-    font-weight: normal;
+
+html {
+    scroll-behavior: smooth;
 }
 
-body {
-    margin: 0;
-    padding-top: 90px;
-    overflow-x: hidden;
-    transition: padding-top 0.3s ease;
+
+/* 스크롤바 전체 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 12px; 
 }
-/* Header */
+
+
+/* 스크롤바 핸들 (실제 스크롤 부분) */
+::-webkit-scrollbar-thumb {
+    background-color: #F4ABC4;
+    border-radius: 10px;
+    border: 2px solid #f0f0f0; 
+}
+
+/* 호버 상태일 때 스크롤바 핸들 색상 */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #FF96AD;
+}
+
 header {
-    background-color: transparent;
-    z-index: 3;
     position: fixed;
-    top: 40px;
-    left: 0;
+    z-index: 10;
     width: 100%;
-    transition: background-color 0.3s ease, top 0.3s ease;
 }
-
-header.scrolled {
-    background-color: #ffffffd9;
-    top: 0;
-}
-
 
 .header_wrap {
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 90%;
-    max-width: 1800px;
-    margin: 0 auto;
-    justify-content: space-between;
-}
-
-header h1 a img {
-    width: 95px;
-}
-
-header h1 {
-    width: 33.333%;
-    text-align: center;
-}
-
-header nav {
-    display: flex;
-    align-items: center;
-    width: 33.333%;
-}
-
-header nav .nav_menu {
-    display: flex;
-    list-style: none;
-}
-
-.nav_menu > li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 65px;
-}
-
-.nav_menu a {
-    text-decoration: none;
-    padding: 0 40px;
-    text-align: center;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100%;
-    color: #47433f;
-}
-.nav_menu .has-submenu:nth-child(1) a {
-    padding: 0 40px 0 0;
-}
-.nav_menu a span {
-    font-family: "Jost-Medium";
-    font-size: 16px;
-    letter-spacing: 0.04rem;
-}
-
-/* Submenu */
-.submenu_wrap2,
-.submenu_wrap3 {
-    display: none;
-    position: absolute;
-    top: 100%;
+    margin: 0 auto;
+    display: flex;
     justify-content: space-between;
-    background-color: #e7e7e7;
-    margin-top: -5px;
-    border-radius: 3px;
+    align-items: center;
+    padding: 20px 40px;
 }
 
-.submenu_wrap2 {
-    left: 110px;
+
+.header_wrap img {
+    height: 50px;
 }
 
-.submenu_wrap3 {
-    left: 240px;
-}
-
-.submenu_wrap2 .submenu,
-.submenu_wrap3 .submenu {
-    list-style: none;
-    padding: 0;
+.header_wrap ul {
+    display: flex;
+    list-style-type: none;
     margin: 0;
-    background-color: #fff;
-    width: 100%;
-    border: 1px solid #e1e1df;
-    padding: 15px 0;
+    padding: 0;
+    width: 50%;
+    justify-content: space-between;
 }
 
-.submenu li a {
-    display: block;
+.header_wrap ul li {
+    margin-right: 20px;
+}
+
+.header_wrap ul li a {
     text-decoration: none;
-    padding: 6px 70px 6px 30px;
-    text-align: left;
-    font-family: "Jost-Regular";
-    font-size: 13px;
-}
-
-/* Submenu Hover */
-#li2:hover + .submenu_wrap2,
-#li3:hover + .submenu_wrap3 {
-    display: flex;
-}
-
-.submenu_wrap2:hover,
-.submenu_wrap3:hover {
-    display: flex;
-}
-
-/* Icon */
-.icons {
-    width: 33.333%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.icons .icon {
-    text-align: center;
-    padding-left: 23px;
-    position: relative;
-}
-
-.icons .icon:nth-child(1) {
-    padding-left: 0;
-}
-
-.icons .icon:nth-child(3) img {
-    width: 28px;
-}
-
-.icons .icon-text {
-    position: absolute;
-    bottom: -28px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 10px;
-    font-family: "Jost-Regular";
     color: #fff;
-    background-color: #9b9996;
-    padding: 6px 10px;
-    border-radius: 30px;
-    width: max-content;
-    animation: bounce 1.3s ease-in-out infinite;
-    letter-spacing: 0.04rem;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 5px 10px;
+    font-weight: 500;
+    transition: color 0.3s; 
+    display: inline-block;
+    position: relative; 
+    color: white; /* 기본 글자색 */
+    text-decoration: none; /* 밑줄 제거 */
 }
 
-/* 애니메이션 */
-@keyframes bounce {
-    0% {
-        transform: translateX(-50%) translateY(0);
-    }
-    50% {
-        transform: translateX(-50%) translateY(-5px);
-    }
-    100% {
-        transform: translateX(-50%) translateY(0);
-    }
-}
-
-.icons .icon-number {
+.header_wrap ul li a::after {
+    content: ""; 
     position: absolute;
+    left: 0;
     bottom: 0;
-    right: 0;
-    font-family: "Pretendard-Regular";
-    background-color: #df6e3a;
-    color: #fff;
-    font-size: 10px;
-    font-weight: bold;
-    padding: 3px 5px;
-    border-radius: 50%;
+    width: 0;
+    height: 2px; 
+    background-color: #FF96AD; 
+    transition: width 0.3s ease-in-out; 
 }
 
-/* Footer */
+.header_wrap ul li:hover a::after {
+    width: 100%; 
+}
+
+
+.scroll-changed {
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.scroll-changed a {
+    color: black !important; 
+}
+
+.scroll-changed .header_wrap ul li:hover a::after {
+    background-color: #F4ABC4;
+    width: 100%; 
+}
+
+/* footer */
 footer {
-    background-color: #f7f7f6;
-}
-
-footer .cs {
-    display: flex;
-    width: 90%;
-    margin: 0 auto;
-    padding: 0 0 130px 0;
-}
-
-footer div {
-    width: 20%;
-}
-
-footer .follow_info,
-footer .link_info {
-    text-align: right;
-}
-
-footer .title {
-    height: 43px;
-    font-family: "Jost-SemiBold";
-    font-size: 13px;
-    letter-spacing: 0.08rem;
-}
-
-footer .title span {
-    font-family: "Jost-Thin";
-}
-
-footer .title .footer_logo {
-    width: 25px;
-    height: 12px;
-}
-
-footer ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-footer ul .tel {
-    font-family: "Jost-Medium";
-    font-size: 19px;
-}
-
-footer ul li {
-    font-family: "Jost-Regular", "Pretendard-Regular", sans-serif;
-    font-size: 13px;
-    line-height: 1.3;
-}
-
-footer .company_info {
-    width: 40%;
-}
-
-footer .guide {
-    border-top: 1px solid #ebe9e5;
-    width: 100%;
     text-align: center;
-    padding: 50px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
+    padding: 50px;
+    background-color: #000;
 }
 
-footer .guide p {
-    font-size: 13px;
-}
-
-footer .guide a {
-    font-size: 12px;
-    border-bottom: 1px solid #47433f;
+footer p {
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 .header_mo {
     display: none;
 }
-.footer_mo {
-    display: none;
-}
-@media screen and (max-width: 999px) {
-    nav.open {
-        width: 100% !important;
-    }
-}
- @media screen and (max-width: 1000px) {
-    #header-placeholder {
-        height: 0;
-    }
+
+@media screen and (max-width: 1020px) {
     header {
         display: none;
     }
+
     .header_mo {
         display: block;
         text-align: center;
         border-bottom: none;
         z-index: 1;
-        position: fixed;
-        width: 100%;
-        max-width: 1000px;
-        margin: 0 auto;
-        transition: background-color 0.3s ease, top 0.3s ease;
-        top: 40px;
-        left: 0;
-    
     }
-    
-    .header_mo.scrolled {
-        background-color: #ffffffd9;
-        top: 0;
-        padding: 10px 0;
-    }
+
     .header_mo .ham {
-        width: 25px;
+        width: 20px;
         height: auto;
     }
-    .header_mo .header_wrap {
-        width: 92%;
-        max-width: 1000px;
+
+    .header_mo img {
+        width: 30%;
+        height: 20%;
     }
-    .header_mo .icons .icon {
-        padding-left: 10px;
-    }
-    .header_mo .icons .icon img{
-        width: 27px;
-    }
-    header h1 a img {
-        width: 60px;
-    }
+
     .header_mo li a {
         width: unset;
         text-align: left;
     }
+
     .header_mo nav {
         position: fixed;
         top: 0;
-        right: -71%; 
-        min-height: 100vh;
-        background: #fff;
+        right: -100%;
+        width: 100%;
         z-index: 1000;
         transition: .3s;
         display: block;
-        background-color: #fff;
-        padding: 40px 30px;
-        
+        background-color: #020101e8;
+        height: 100%;
     }
+
     .header_wrap {
         width: 100%;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        position: relative;
     }
+
     .header_wrap h1 {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 0;
+        text-align: left;
     }
-    .back {
+
+    .back1 {
         position: fixed;
         width: 100% !important;
         height: 100%;
@@ -429,154 +176,123 @@ footer .guide a {
         display: none;
         z-index: 998;
         left: 0;
+        background: #0202024a;
     }
-    nav.open + .back {
+
+    nav.open + .back1 {
         display: block;
     }
+
     nav.open {
-        right: 0; 
-        width: 35%;
+        right: 0;
     }
+
     .nav_logo {
+        width: 100%;
         display: flex;
         justify-content: right;
-        align-items: center;
-        position: absolute;
-        top: 4%;
-        right: 7%;
+        align-items: center; 
+        padding: 20px 40px;
+        height: 74px;
     }
+
     .i2 {
         text-align: right !important;
     }
+
     .close {
         display: block;
         background: url(../img/close.png) no-repeat center/contain;
-        width: 27px;
-        height: 27px;
+        width: 20px;
+        height: 20px;
         cursor: pointer;
     }
+
     .nav_menu {
         flex-direction: column;
-        display: flex;
-        gap: 15px;
-        align-items: flex-start;
-        margin-bottom: 40px !important;
-    }
-    .nav_menu:last-child li a {
-        font-family: "Jost-Regular";
-    }
-    .nav_menu .submenu {
-        margin: 15px 0 20px 0;
+        height: calc(100% - 150px);
         padding: 15px;
-        border-top: 1px solid #ebe9e5;
-        width: 100%;
         display: flex;
-        flex-direction: column;
-        gap: 15px;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
     }
+
     .nav_menu li {
-        background-color: #fff;
-        text-align: left;
+        text-align: center;
         color: #505050;
         display: flex;
-        align-items: flex-start;
-        width: 100%;
-        height: unset;
-        flex-direction: column;
+        justify-content: flex-start !important;
+        width: unset;
+        padding: 10px;
     }
+
     .nav_menu li:last-child {
         border-bottom: none;
     }
+
     .nav_menu li a {
         display: block;
-        font-size: 15px;
-        color: #505050;
-        padding: 0;
-        font-family: "Jost-Medium";
+        font-size: 30px;
+        width: unset;
+        text-align: center;
+        padding: 5px;
+        color: #fff;
     }
-    .nav_menu .submenu_list a {
-        display: block;
-        font-size: 15px;
-        color: #505050;
-        padding: 0;
-        font-family: "Jost-Regular";
-    }
+
     .nav_menu li a span {
-        font-family: "Jost-Thin";
+        font-size: 16px;
+        color: #2c2f2d;
+        font-weight: 800;
+        white-space: nowrap;
     }
- 
+
     .nav_menu li .n {
         padding: 0;
     }
 
-    footer {
+    .back_button {
         display: none;
+        position: absolute;
+        transform: translateY(50%);
+        top: 15%;
+        left: 15px;
+        text-align: left;
     }
-    .footer_mo {
-        display: block;
+
+    .center_logo {
+        font-size: 2rem;
+        font-weight: 600;
     }
-    .footer_mo ul {
-        gap: 5px;
+
+    .scroll-changed a {
+        color: #fff !important;
     }
-    .footer_mo .cs{
-        display: flex;
-        flex-direction: column;
-        padding: 0;
+
+    footer {
+        padding: 30px;
     }
-    .footer_mo .info_wrap {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-    }
-    .footer_mo .company_info {
-        width: 100%;
-        margin-bottom: 40px;
-    }
-    .footer_mo .title {
-        height: 30px;
-        font-family: "Jost-SemiBold";
-        font-size: 12px;
-        letter-spacing: 0.08rem;
-    }
-    .footer_mo .info_wrap .company_info ul {
-        width: 100%;
-    }
-    .footer_mo .link_info {
-        border-top: 1px solid #ebe9e5;
-        width: 100%;
-        padding: 20px 0;
-        display: flex;
-        justify-content: flex-start;
-        gap: 15px;
-        margin-top: 40px;
-    }
-    
-    .footer_mo .link_info p {
-        font-size: 13px;
-    }
-    
-    .footer_mo .link_info a {
-        font-size: 11px;
-    }
-    .footer_mo .link_info ul {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-    }
-    .footer_mo ul .tel {
-        font-family: "Jost-Medium";
-        font-size: 16px;
-    }
-    footer ul li {
-        font-size: 11px;
-    }
-    .footer_mo .company_info ul > li:last-child {
+    footer p {
+        font-size: 14px;
         line-height: 1.6;
     }
-    .footer_mo .cs_info {
-        width: 50%;
+}
+
+@media screen and (max-width: 767px) {
+    .header_wrap {
+        padding: 15px 20px;
     }
-    footer .follow_info {
-        width: 50%;
+
+    .nav_logo {
+        padding: 15px 20px;
+        height: 63px;
     }
+
+    .nav_menu li a {
+        font-size: 25px;
+    }  
+    footer p {
+        font-size: 11px;
+    }
+
 }
